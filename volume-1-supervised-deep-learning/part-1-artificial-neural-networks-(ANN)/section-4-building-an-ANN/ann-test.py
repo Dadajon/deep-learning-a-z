@@ -82,6 +82,8 @@ Use our ANN model to predict if the customer with the following informations wil
  - Is this customer an Active Member: Yes
  - Estimated Salary: $50000
 """
+new_prediction = classifier.predict(sc.transform(np.array([[0.0, 0, 600, 1, 40, 3, 60000, 2, 1, 1, 50000]])))
+new_prediction = (new_prediction > 0.5)
 
 # Making the Confusion Matrix
 from sklearn.metrics import confusion_matrix
